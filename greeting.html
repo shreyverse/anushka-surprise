@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise for You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #ff85a2;
+            --soft-gold: #fef9e7;
+            --text-grey: #444;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #fef9e7 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--text-grey);
+        }
+
+        /* Floating Background Decorations */
+        .bg-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating {
+            position: absolute;
+            opacity: 0.4;
+            animation: move 8s linear infinite;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(110vh) rotate(0deg); }
+            100% { transform: translateY(-10vh) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Video Portal Style */
+        .video-box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid white;
+            box-shadow: 0 15px 35px rgba(255, 133, 162, 0.3);
+            background: #fff;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .question {
+            font-size: 20px;
+            margin: 25px 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        button {
+            padding: 15px 35px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .yes {
+            background: var(--primary-pink);
+            color: white;
+            box-shadow: 0 6px 20px rgba(255, 133, 162, 0.4);
+        }
+
+        .no {
+            background: #fff;
+            color: #999;
+            border: 1px solid #eee;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Elegant Card Style */
+        .card {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            animation: slideUp 0.8s ease-out;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-pink);
+            font-size: 40px;
+            margin-top: 0;
+        }
+
+        .message {
+            line-height: 1.8;
+            font-size: 15px;
+            text-align: left;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Bouquet Image Style */
+        .bouquet-img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 20px;
+            margin: 10px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: var(--primary-pink);
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="bg-elements" id="bg"></div>
+
+<div class="container" id="catScreen">
+    <div class="video-box">
+        <video autoplay loop muted playsinline>
+            <source src="Cute_Cat_Video_Creation.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="question" id="question">
+        Hey Anushka 🐱<br>
+        Hi… I'm Shreyansh's cat assistant today.<br>
+        Both of us brought a tiny surprise for you.<br>
+        Should I show it to you?
+    </div>
+
+    <button class="yes" onclick="openCard()">Yes, I'd love to!</button>
+    <button class="no" id="noBtn" onclick="noClick()">No</button>
+</div>
+
+<div class="container card" id="card">
+    <h1>Happy Women's Day 🌸</h1>
+
+    <div class="message">
+        Hey Anushka 🌸
+        <br><br>
+        I wanted to do something a little different today… partly because it's Women's Day, and partly because you honestly deserve a small appreciation post from the universe (and from me).
+        <br><br>
+        You've listened to me during some pretty chaotic phases of my life. Most people would probably run away after hearing half the things I've said, but you stayed, listened, and somehow never judged me for any of it. That's actually rare… and I genuinely appreciate that.
+        <br><br>
+        So this is my very fancy, very expensive bouquet… created using 100% premium coding skills instead of money. 🌼🌷
+        Since you usually refuse to meet me physically, I had to find a creative workaround.
+        <br><br>
+        Also, if I ever said or did something that made you feel bad, I'm really sorry. That was never my intention. Sometimes I'm just naturally talented at saying slightly stupid things at the wrong time.
+        <br><br>
+        But honestly, I'm really glad you're in my life. You're kind, patient, and somehow manage to tolerate my nonsense better than most people would.
+        <br><br>
+        So today the cat and I decided you deserve some flowers, some appreciation, and a little reminder that you're a really lovely human.
+        <br><br>
+        Happy Women's Day, Anushka 🌷
+        <br><br>
+        P.S. If you smiled even a tiny bit while reading this… then the cat and I consider this mission successful.
+    </div>
+
+    <img src="Screenshot 2026-03-07 023327.png" class="bouquet-img" alt="Virtual Flowers">
+
+    <div class="signature">
+        — Shreyansh
+    </div>
+</div>
+
+<script>
+    // Create floating blossoms in background
+    const bg = document.getElementById('bg');
+    const items = ['🌸', '✨', '🌷', '🌼', '💖'];
+    for (let i = 0; i < 18; i++) {
+        const div = document.createElement('div');
+        div.className = 'floating';
+        div.innerText = items[Math.floor(Math.random() * items.length)];
+        div.style.left = Math.random() * 100 + 'vw';
+        div.style.animationDelay = Math.random() * 8 + 's';
+        div.style.fontSize = (Math.random() * 15 + 20) + 'px';
+        bg.appendChild(div);
+    }
+
+    let noCount = 0;
+
+    function openCard() {
+        document.getElementById("catScreen").style.display = "none";
+        document.getElementById("card").style.display = "block";
+    }
+
+    function noClick() {
+        noCount++;
+        const q = document.getElementById("question");
+        const noBtn = document.getElementById("noBtn");
+
+        if(noCount == 1) {
+            q.innerHTML = "Wait wait 🥺<br>Shreyansh and I actually worked hard on this... Are you sure you don't want to see it?";
+            noBtn.style.transform = "scale(0.8)";
+        } else if(noCount == 2) {
+            q.innerHTML = "Okay okay 😺<br>I promised Shreyansh I would deliver this to you... so please open it?";
+            noBtn.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
